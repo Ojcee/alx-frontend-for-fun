@@ -776,9 +776,11 @@ ul.row {
     .tag-list .li{
       display: inline;
     }
-    .tag-list li::after{
+    .tag-list li::after {
       content: ", ";
     }
-     .tag-list li:last-child::after{
-      content: none;
+     .tag-list li:last-child::after {
+      content: "";
     }
+  
+
