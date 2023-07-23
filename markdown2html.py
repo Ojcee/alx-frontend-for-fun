@@ -6,8 +6,15 @@ import markdown
 def convert_markdown_to_html(input_file, output_file):
     with open(input_file, 'r') as md_file:
         markdown_text = md_file.read()
-        html_text = markdown.markdown(markdown_text)
-    
+        html_text = markdown.markdown(markdown_text, extensions=['markdown.extensions.extra', 'markdown.extensions.nl2br'])
+
+    # Parse bold syntax
+    html_text = html_text.replace("<strong>", "<b>")
+  
+    # Replace **bold** with <strong>bold</strong> in the HTML
+    html_text = html_text.replace('<p><strong>', '<strong>')
+    html_text = html_text.replace('</strong></p>', '</strong>')
+  
     with open(output_file, 'w') as html_file:
         html_file.write(html_text)
 
@@ -29,4 +36,18 @@ if __name__ == "__main__":
     convert_markdown_to_html(input_filename, output_filename)
 
     sys.exit(0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
