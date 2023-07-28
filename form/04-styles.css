@@ -864,14 +864,8 @@ textarea:focus {
   background-color: var(--color-light-grey);
 }
 
-/* ::placeholder {
-  font-style: italic;
-  font-size: var(--font-size-small);
-} */
-
-input[type="text"]::placeholder,
-input[type="email"]::placeholder,
-textarea::placeholder {
+::placeholder {
   font-style: italic;
   font-size: var(--font-size-small);
 }
+
